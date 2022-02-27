@@ -87,3 +87,26 @@ SELECT P.PersonagemNome 'Nome do Personagem', P.PersonagemLVL 'LVL do Personagem
 JOIN Classe C -- MESMO SEM "AS" RECONHECE COMO APELIDO
 ON P.ClasseId = C.ClasseId 
 
+
+-- ATIVIDADE 3 UC10
+
+INSERT INTO  Usuarios VALUES ('FingeQueAquiTemUmEmailFoda@gmail.com','ImagineAquiUmaSenhaMuitoFoda')
+INSERT INTO Classe VALUES ('Agiota','Cobra as dividas contra os monstros')
+INSERT INTO Habilidade VALUES ('Mira Precisa','Ao ativar a habilidade voce fica sem recuo por 30 segundos')
+INSERT INTO Personagem (PersonagemNome, PersonagemLVL,UsuarioId, ClasseId) VALUES ('PedrinAgiota', 55, 3, 3)
+INSERT INTO ClasseHabilidade (ClasseId, HabilidadeId) VALUES(3,3)
+
+ 
+UPDATE Personagem
+SET PersonagemNome = 'AgiotaPorAmor'
+WHERE PersonagemId = 3
+
+
+-- ATIVIDADE 4 UC10
+CREATE LOGIN RobsonJogador
+WITH PASSWORD = 'repolhoCozido'
+
+CREATE USER RobsonJogador FOR LOGIN RobsonJogador
+
+
+GRANT SELECT TO RobsonJogador
